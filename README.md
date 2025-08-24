@@ -2,6 +2,10 @@
 
 AWS 全方位 RSS 分析专家，支持多种 AWS 官方 RSS feeds 的智能分析助手。
 
+## 🎬 Demo 演示
+
+![Demo](demo.gif)
+
 ## 🚀 功能特点
 
 ### 核心能力
