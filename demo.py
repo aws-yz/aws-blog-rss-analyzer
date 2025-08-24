@@ -7,12 +7,16 @@ AWS Blog RSS Analyzer 功能演示脚本
 import subprocess
 import json
 import sys
+import os
 from datetime import datetime, timedelta
 
 def run_demo():
     """运行功能演示"""
     print("🚀 AWS Blog RSS Analyzer 功能演示")
     print("=" * 50)
+    
+    # 获取脚本目录
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # 计算日期范围（最近3天）
     end_date = datetime.now()
@@ -29,7 +33,7 @@ def run_demo():
     print("-" * 30)
     
     cmd = [
-        'python3', '/Users/wyz/project/rss-parser/blog_analyzer.py',
+        'python3', os.path.join(script_dir, 'blog_analyzer.py'),
         'whats-new', start_str, end_str
     ]
     
@@ -54,7 +58,7 @@ def run_demo():
     print("-" * 30)
     
     cmd = [
-        'python3', '/Users/wyz/project/rss-parser/blog_analyzer.py',
+        'python3', os.path.join(script_dir, 'blog_analyzer.py'),
         'machine-learning', start_str, end_str
     ]
     
@@ -79,7 +83,7 @@ def run_demo():
     print("-" * 30)
     
     cmd = [
-        'python3', '/Users/wyz/project/rss-parser/rss_parser.py',
+        'python3', os.path.join(script_dir, 'rss_parser.py'),
         'machine-learning', start_str, end_str
     ]
     
