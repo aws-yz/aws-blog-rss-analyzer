@@ -299,8 +299,9 @@ def main():
             processed += 1
             
             # 每处理一篇文章后短暂延迟，避免超过限流
-            if processed < len(articles):
-                time.sleep(0.3)  # 300ms延迟，确保不超过250次/分钟
+            # 注释掉延迟以加快演示速度
+            # if processed < len(articles):
+            #     time.sleep(0.3)  # 300ms延迟，确保不超过250次/分钟
         
         # 批次间延迟
         if i + batch_size < len(articles):
