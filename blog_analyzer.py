@@ -279,7 +279,7 @@ def main():
     print(f"找到 {len(articles)} 篇文章，直接使用 RSS 内容生成摘要...", file=sys.stderr)
     
     # 2. 直接使用 RSS description 生成摘要 - 考虑限流，分批处理
-    print(f"正在使用 Claude 3.7 Sonnet 生成摘要 (配额: 250次/分钟)...", file=sys.stderr)
+    print(f"正在使用 Claude 3.7 Sonnet 生成摘要...", file=sys.stderr)
     
     # 如果文章数量较多，分批处理避免限流
     batch_size = 10  # 每批处理10篇文章
