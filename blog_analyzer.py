@@ -176,6 +176,13 @@ def generate_markdown_report(blog_type, articles, start_date, end_date):
             article.get('content', '')
         )
         
+        # 清理摘要中的标题标记，避免与报告结构冲突
+        if summary:
+            # 移除开头的 # 标题标记
+            summary = re.sub(r'^#+\s*', '', summary.strip())
+            # 移除中间的 # 标题标记，替换为粗体
+            summary = re.sub(r'\n#+\s*([^\n]+)', r'\n**\1**', summary)
+        
         report += f"""### {i}. {article['title']}
 - **作者**: {article['author']}
 - **发布时间**: {formatted_date}
